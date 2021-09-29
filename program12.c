@@ -1,35 +1,22 @@
 #include<stdio.h>
-//Input: 3
-//
-int Addition(int);
+
+void DisplayTable()
+{
+	int i=0;
+	printf("ASCII table is\n");
+	printf("***********************************\n");
+	printf("Decimal\tHexadecimal\tOctal\tCharacter\n");
+	printf("***********************************\n");
+	
+	for(i=0;i<=127;i++)
+	{
+		printf("%d \t %x \t %o \t %c \n",i,i,i,i);
+	}
+	printf("***********************************\n");
+}
 
 int main()
 {
-	int iNo=0,iRet=0;
-	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
-	
-	iRet=Addition(iNo);
-	
-	printf("Addition is: %d",iRet);	//Function call
-	
+	DisplayTable();
 	return 0;
-}
-
-int Addition(int iValue)		//Defination
-{
-	int iSum=0,iCnt=0;
-	
-	if(iValue<0)	//Updator
-	{
-		iValue=-iValue;
-	}
-	
-	for(iCnt=1;iCnt<=iValue;iCnt++)
-	{
-		iSum=iSum+iCnt;
-	}
-	
-	return iSum;
 }

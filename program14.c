@@ -1,30 +1,9 @@
 #include<stdio.h>
 #include<stdbool.h>
-bool CheckEven(int);
 
-int main()
+bool CheckSmall(char ch)
 {
-	int iNo=0;
-	bool bRet=false;
-	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
-	
-	bRet=CheckEven(iNo);
-	
-	if(bRet==true)
-	{
-		printf("%d number is even",iNo);
-	}
-	else
-	{
-		printf("%d number is not even",iNo);
-	}
-}
-
-bool CheckEven(int iValue)
-{
-	if((iValue%2)==0)
+	if((ch>='a')&&(ch<='z'))
 	{
 		return true;
 	}
@@ -32,4 +11,26 @@ bool CheckEven(int iValue)
 	{
 		return false;
 	}
+	
+}
+
+int main()
+{
+	char cValue='\0';
+	bool bRet=false;
+	
+	printf("Enter character");
+	scanf("%c",&cValue);
+	
+	bRet=CheckSmall(cValue);
+		if(bRet==true)
+		{
+			printf("It is Small\n");
+		}
+		else
+		{
+			printf("It is not a Small\n");
+		}
+	
+	return 0;
 }

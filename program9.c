@@ -1,20 +1,33 @@
 #include<stdio.h>
 
-void Display();
+typedef unsigned int UINT;
+UINT strlenX(char *str)
+{
+	int iCnt=0;
+	
+	if(str==NULL)
+	{
+		return 0;
+	}
+	
+	while(*str!='\0')
+	{
+		iCnt++;
+		str++;
+	}
+	return iCnt;
+}
 
 int main()
 {
+	char Arr[20];
+	UINT iRet=0;
 	
-	Display();		//Function call
+	printf("Enter string\n");
+	scanf("%[^'\n']s",Arr);
+	
+	iRet=strlenX(Arr);	//strlenX(50);
+	printf("Length of string is:%d\n",iRet);
 	
 	return 0;
-}
-
-void Display()		//Defination
-{
-	int i=0;
-	for(i=5;i>=1;i--)
-	{
-		printf("%d\n",i);
-	}
 }

@@ -1,20 +1,13 @@
 #include<stdio.h>
 
-void Display();		//Declaration
-
 int main()
 {
-	Display();		//Function call
+	char Arr[50];
+	
+	printf("Enter your name\n");
+	scanf("%[^'\n']s",Arr);
+	
+	printf("Your entered name is: %s\n",Arr);
 	
 	return 0;
-}
-
-void Display()		//Defination
-{
-	int i=0;
-	
-	for(i=1;i<=5;i++)
-	{
-		printf("%d\n",i);
-	}
 }

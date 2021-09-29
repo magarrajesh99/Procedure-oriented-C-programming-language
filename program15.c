@@ -1,42 +1,36 @@
 #include<stdio.h>
-//Input: 3
-//
-int Addition(int);
+#include<stdbool.h>
+
+bool CheckDigit(char ch)
+{
+	if((ch>='0')&&(ch<='9'))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
 
 int main()
 {
-	int iNo=0,iRet=0;
+	char cValue='\0';
+	bool bRet=false;
 	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
+	printf("Enter character");
+	scanf("%c",&cValue);
 	
-	iRet=Addition(iNo);
-	
-	printf("Factorial is: %d",iRet);	//Function call
+	bRet=CheckDigit(cValue);
+		if(bRet==true)
+		{
+			printf("It is Digit\n");
+		}
+		else
+		{
+			printf("It is not a Digit\n");
+		}
 	
 	return 0;
-}
-
-int Addition(int iValue)		//Defination
-{
-	int iFact=1,iCnt=0;
-	
-	if(iValue<0)	//Updator
-	{
-		iValue=-iValue;
-	}
-	/*
-	for(iCnt=1;iCnt<=iValue;iCnt++)
-	{
-		iFact=iFact*iCnt;
-	}
-	*/
-	iCnt=1;
-	while(iCnt<=iValue)
-	{
-		iFact=iFact*iCnt;
-		iCnt++;
-	}
-	
-	return iFact;
 }

@@ -1,60 +1,29 @@
-/* 2.Write a program which accept number from user and check whether it contains 0 in it or not.
-	Input:	2395
-	Output:	There is no Zero
-	
-	Input:	1018
-	Output:	It Contains Zero
-*/
-
 #include<stdio.h>
+#include<stdbool.h>
 
-#define TRUE 1
-#define FALSE 0
-
-typedef int BOOL;
-
-BOOL ChkZero(int iNo)
+int SpaceCount(char *str)
 {
-	int iDigit=0;
-	
-	if(iNo<0)				//Input Updator
+	int iCnt=0;
+	while(*str!='\0')
 	{
-		iNo=-iNo;
-	}
-	
-	if(iNo==0)
-	{
-		return TRUE;
-	}
-	
-	while(iNo!=0)			//O(N)
-	{
-		iDigit=iNo%10;
-		if(iDigit==0)
+		if(*str==' ')
 		{
-			return TRUE;
+			iCnt++;
 		}
-		iNo=iNo/10;
+		str++;
 	}
+	return iCnt;
 }
+
 int main()
 {
-	int iValue=0;
-	BOOL bRet=FALSE;
+	char Arr[20],iRet=0;
+
 	
-	printf("Enter number\n");
-	scanf("%d",&iValue);
+	printf("Enter character\t");
+	scanf("%[^'\n']s",Arr);
 	
-	bRet=ChkZero(iValue);
-	
-	if(bRet==TRUE)
-	{
-		printf("It Contains Zero");
-	}
-	else
-	{
-		printf("There is no Zero");
-	}
-	
+	iRet=SpaceCount(Arr);
+	printf("Spaces are: %d\t",iRet);
 	return 0;
 }

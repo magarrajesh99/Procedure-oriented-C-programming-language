@@ -1,42 +1,34 @@
-/*1. Write a program which accept number from user and display its digits in reverse order.
-	Input:	2395						
-	Output:	5
-			9
-			3
-			2
-	Input:	1018
-	Output:	8
-			1
-			0
-			1		
-*/
-
 #include<stdio.h>
+#include<stdbool.h>
 
-void DisplayDigit(int iNo)
+void Count(char *str)
 {
-	int iDigit=0;
-	
-	if(iNo<0)				//Input Updator
+	int cCount=0,sCount=0;
+	while(*str!='\0')
 	{
-		iNo=-iNo;
+		if((*str>='A')&&(*str<='Z'))
+		{
+			cCount++;
+		}
+		else if((*str>='a')&&(*str<='z'))
+		{
+			sCount++;
+		}
+		str++;
 	}
-	
-	while(iNo!=0)				//O(N)
-	{
-		iDigit=iNo%10;
-		printf("%d\n",iDigit);
-		iNo=iNo/10;
-	}
+	printf("Capital letters are:%d\n",cCount);
+	printf("Small letters are:%d\n",sCount);
 }
+
 int main()
 {
-	int iValue=0;
+	char Arr[20];
+
 	
-	printf("Enter Number");
-	scanf("%d",&iValue);
+	printf("Enter character\t");
+	scanf("%[^'\n']s",Arr);
 	
-	DisplayDigit(iValue);
-	
+	Count(Arr);
+
 	return 0;
 }

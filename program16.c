@@ -1,32 +1,23 @@
 #include<stdio.h>
- 
-void DisplayFactors(int);
+#include<stdbool.h>
+
+char SmallToCapital(char ch)
+{
+	if((ch>='a')&&(ch<='z'))
+	{
+		return ch-32;
+	}
+}
 
 int main()
 {
-	int iNo=0;
+	char cValue='\0',cRet='\0';
 	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
+	printf("Enter character");
+	scanf("%c",&cValue);
 	
-	DisplayFactors(iNo);
-	
+	cRet=SmallToCapital(cValue);
+		printf("Capital letter is:%c\t",cRet);
+		
 	return 0;
-}
-
-void DisplayFactors(int iValue)
-{
-	
-	int iCnt=0;
-	if(iValue<0)
-	{
-		iValue=-iValue;
-	}
-	for(iCnt=1;iCnt<iValue;iCnt++)
-	{
-		if((iValue%iCnt)==0)
-		{
-			printf("%d\t",iCnt);
-		}
-	}
 }

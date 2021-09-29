@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<stdbool.h>
 
-int  CapitalCount(char *str)
+int  SmallCount(char *str)
 {
 	int iCnt=0;
 	while(*str!='\0')
 	{
-		if((*str>='A')&&(*str<='Z'))
+		if((*str>='a')&&(*str<='z'))
 		{
 			iCnt++;
 		}
@@ -23,8 +23,8 @@ int main()
 	printf("Enter character\t");
 	scanf("%[^'\n']s",Arr);
 	
-	iRet=CapitalCount(Arr);
-	printf("Capital character is:%d\t",iRet);
+	iRet=SmallCount(Arr);
+	printf("Small character is:%d\t",iRet);
 		
 	return 0;
 }

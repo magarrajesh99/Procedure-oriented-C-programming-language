@@ -1,25 +1,32 @@
 #include<stdio.h>
 
-void Display(int);
-
+void Display(char *Brr)
+{
+	printf("%c\n",*Brr);
+	Brr++;
+	
+	printf("%c\n",*Brr);
+	Brr++;
+	
+	printf("%c\n",*Brr);
+	Brr++;
+	
+	printf("%c\n",*Brr);
+	Brr++;
+	
+	printf("%c\n",*Brr);
+	Brr++;
+	
+	
+}
 int main()
 {
-	int iNo=0;
+	char Arr[10];
 	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
+	printf("Enter your name\n");
+	scanf("%[^'\n']s",Arr);
 	
-	Display(iNo);		//Function call
+	Display(Arr);
 	
 	return 0;
-}
-
-void Display(int iValue)		//Defination
-{
-	int i=0;
-	
-	for(i=1;i<=iValue;i++)
-	{
-		printf("%d\n",i);
-	}
 }

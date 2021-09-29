@@ -1,45 +1,27 @@
-/*3.Write a program which accept number from user and display all its non factors.
-
-Input:	12
-Output:	5	7	8	9	10	11
-
-Input:	13
-Output:	2	3	4	5	6	7	8	8	9	10	11	12		
-
-Input:	10
-Output:	3	4	6	7	8	9
-*/
-
 #include<stdio.h>
+#include<stdbool.h>
 
-void NonFact(int iNo)
+char CharToggle(char ch)
 {
-	
-	int iCnt=0;
-	
-	if(iNo<0)								//Updator
+	if((ch>='A')&&(ch<='Z'))
 	{
-		iNo=-iNo;
+		return ch+32;
 	}
-	
-	for(iCnt=1;iCnt<iNo;iCnt++)		//O(N)
+	else if((ch>='a')&&(ch<='z'))
 	{
-		if((iNo%iCnt)!=0)
-		{
-			printf("%d\t",iCnt);
-		}
+		return ch-32;
 	}
 }
 
 int main()
 {
-	int iValue=0;
+	char cValue='\0',cRet='\0';
 	
-	printf("Enter number\n");
-	scanf("%d",&iValue);
+	printf("Enter character\t");
+	scanf("%c",&cValue);
 	
-	NonFact(iValue);
-	
+	cRet=CharToggle(cValue);
+	printf("Toggle letter is:%c\t",cRet);
+		
 	return 0;
 }
-

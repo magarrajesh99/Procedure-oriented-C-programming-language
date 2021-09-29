@@ -1,35 +1,36 @@
 #include<stdio.h>
-//Input: 3
-//
-int Addition(int);
+#include<stdbool.h>
+
+bool CheckCapital(char ch)
+{
+	if((ch>='A')&&(ch<='Z'))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
 
 int main()
 {
-	int iNo=0,iRet=0;
+	char cValue='\0';
+	bool bRet=false;
 	
-	printf("Enter number\n");
-	scanf("%d",&iNo);
+	printf("Enter character");
+	scanf("%c",&cValue);
 	
-	iRet=Addition(iNo);
-	
-	printf("Factorial is: %d",iRet);	//Function call
+	bRet=CheckCapital(cValue);
+	if(bRet==true)
+	{
+		printf("It is capital\n");
+	}
+		else
+		{
+			printf("It is not a capital\n");
+		}
 	
 	return 0;
-}
-
-int Addition(int iValue)		//Defination
-{
-	int iFact=1,iCnt=0;
-	
-	if(iValue<0)	//Updator
-	{
-		iValue=-iValue;
-	}
-	
-	for(iCnt=1;iCnt<=iValue;iCnt++)
-	{
-		iFact=iFact*iCnt;
-	}
-	
-	return iFact;
 }
